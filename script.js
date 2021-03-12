@@ -1,3 +1,8 @@
+const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
+const weightGroup = ['medium', 'big', 'reallybig'];
+const rotate = ['rotateleft', 'rotateright'];
+const skew = ['skewleft', 'skewright'];
+
 function createLetter() {
   const message = document.getElementById('carta-texto');
   const letter = document.getElementById('carta-gerada');
@@ -14,9 +19,28 @@ function createLetter() {
   }
 }
 
+function generateClasses() {
+  const indexRandom1 = Math.floor(Math.random() * 2);
+  const indexRandom2 = Math.floor(Math.random() * 2);
+  const indexRandom3 = Math.floor(Math.random() * 1);
+  const indexRandom4 = Math.floor(Math.random() * 1);
+
+  const spans = document.querySelectorAll('#carta-gerada span');
+
+  for (let i = 0; i < spans.length; i++) {
+    spans[i].classList.add(styleGroup[indexRandom1]);
+    spans[i].classList.add(weightGroup[indexRandom2]);
+    spans[i].classList.add(rotate[indexRandom3]);
+    spans[i].classList.add(skew[indexRandom4]);
+  }
+}
+
 function createBtn() {
   const createBtnInput = document.getElementById('criar-carta');
-  createBtnInput.addEventListener('click', createLetter);
+  createBtnInput.addEventListener('click', () => {
+    createLetter();
+    generateClasses();
+  });
 }
 
 createBtn();
