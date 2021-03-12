@@ -2,7 +2,7 @@ function createLetter() {
   const message = document.getElementById('carta-texto');
   const letter = document.getElementById('carta-gerada');
   const helper = message.value.split(' ');
-  if (!message.value) {
+  if (!message.value || message.value.replace(/\s/g, '') === '') {
     letter.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
     letter.innerText = '';
