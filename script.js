@@ -27,7 +27,7 @@ function generateClasses() {
 
   const spans = document.querySelectorAll('#carta-gerada span');
 
-  for (let i = 0; i < spans.length; i++) {
+  for (let i = 0; i < spans.length; i += 1) {
     spans[i].classList.add(styleGroup[indexRandom1]);
     spans[i].classList.add(weightGroup[indexRandom2]);
     spans[i].classList.add(rotate[indexRandom3]);
@@ -35,12 +35,22 @@ function generateClasses() {
   }
 }
 
+function createCount() {
+  const count = document.querySelector('#carta-contador');
+  const spans = document.querySelectorAll('#carta-gerada span');
+
+  count.innerText = `${spans.length} palavras`;
+}
+
 function createBtn() {
   const createBtnInput = document.getElementById('criar-carta');
   createBtnInput.addEventListener('click', () => {
     createLetter();
     generateClasses();
+    createCount();
   });
 }
 
-createBtn();
+window.onload = () => {
+  createBtn();
+};
