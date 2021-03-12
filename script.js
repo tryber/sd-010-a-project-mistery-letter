@@ -22,12 +22,12 @@ function createLetter() {
 
 function generateClasses() {
   const spans = document.querySelectorAll('#carta-gerada span');
+  const indexRandom1 = Math.floor(Math.random() * 2);
+  const indexRandom2 = Math.floor(Math.random() * 2);
+  const indexRandom3 = Math.floor(Math.random() * 1);
+  const indexRandom4 = Math.floor(Math.random() * 1);
 
   for (let i = 0; i < spans.length; i += 1) {
-    const indexRandom1 = Math.floor(Math.random() * 2);
-    const indexRandom2 = Math.floor(Math.random() * 2);
-    const indexRandom3 = Math.floor(Math.random() * 1);
-    const indexRandom4 = Math.floor(Math.random() * 1);
     spans[i].classList.add(styleGroup[indexRandom1]);
     spans[i].classList.add(weightGroup[indexRandom2]);
     spans[i].classList.add(rotate[indexRandom3]);
