@@ -13,7 +13,7 @@ function createLetter() {
     letter.innerText = '';
     for (let index = 0; index < helper.length; index += 1) {
       const span = document.createElement('span');
-      span.classList.add('span');
+      span.id = 'span';
       span.innerText = helper[index];
       letter.appendChild(span);
     }
@@ -21,7 +21,7 @@ function createLetter() {
 }
 
 function generateClasses() {
-  const spans = document.querySelectorAll('#carta-gerada span');
+  const spans = document.querySelectorAll('#carta-gerada #span');
 
   for (let i = 0; i < spans.length; i += 1) {
     const indexRandom1 = Math.floor(Math.random() * 3);
@@ -37,7 +37,7 @@ function generateClasses() {
 
 function createCount() {
   const count = document.querySelector('#carta-contador');
-  const spans = document.querySelectorAll('.span');
+  const spans = document.querySelectorAll('#span');
 
   count.innerText = `${spans.length}`;
 }
