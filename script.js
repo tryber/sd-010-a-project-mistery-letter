@@ -39,7 +39,7 @@ function createCount() {
   const count = document.querySelector('#carta-contador');
   const spans = document.querySelectorAll('.span');
 
-  count.innerText = `${spans.length} palavras`;
+  count.innerText = `${spans.length}`;
 }
 
 function createBtn() {
