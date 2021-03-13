@@ -6,6 +6,9 @@ function generateLetter() {
     tagSpan.innerText = arr[index];
     document.getElementById('carta-gerada').appendChild(tagSpan);
   }
+  if (str === '' || str === ' ') {
+    document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta';
+  }
 }
 
 document.getElementById('criar-carta').addEventListener('click', generateLetter);
