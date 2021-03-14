@@ -9,7 +9,7 @@ const getBtn = document.getElementById('criar-carta');
 getBtn.addEventListener('click', () => {
   const getLetter = document.getElementById('carta-texto').value;
   if (getLetter.trim().length === 0) {
-    document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.'
+    document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
   }
   const arrayLetter = getLetter.split(' ');
   for (let index = 0; index < arrayLetter.length; index += 1) {
