@@ -1,0 +1,63 @@
+/* Copiado para agilizar o processo do script
+https://github.com/tryber/sd-010-b-project-mistery-letter/pull/6/files?file-filters%5B%5D=
+.css#diff-b78be019f1dc6d57753ea900c3805b114cd53ab7c0db836cc081836df1b99b7a */
+
+span {
+  display: inline-block;
+}
+
+p {
+  line-height: 110%;
+}
+
+.newspaper {
+  background-color: antiquewhite;
+  font-family: 'Times New Roman';
+  font-weight: 700;
+}
+
+.magazine1 {
+  background-color: teal;
+  color: white;
+  font-family: Verdana;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.magazine2 {
+  background-image: url('images/pink-pattern.png');
+  color: fuchsia;
+  font-family: Verdana;
+  font-weight: 900;
+}
+
+.medium {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.big {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.reallybig {
+  font-size: 40px;
+  padding: 15px;
+}
+
+.rotateleft {
+  transform: matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0);
+}
+
+.rotateright {
+  transform: matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0);
+}
+
+.skewleft {
+  transform: matrix(1, 0, 0.176327, 1, 0, 0);
+}
+
+.skewright {
+  transform: matrix(1, 0, -0.176327, 1, 0, 0);
+}
