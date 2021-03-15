@@ -9,9 +9,12 @@ function generateWords() {
 function generateLetter() {
   const misteryousLetter = document.getElementById('carta-gerada');
   const words = generateWords();
+  if (misteryousLetter.innerText !== '') {
+    misteryousLetter.innerHTML = '';
+  }
   for (let i = 0; i < words.length; i += 1) {
     const word = document.createElement('span');
-    word.innerHTML = words[i];
+    word.innerHTML = `${words[i]}`;
     misteryousLetter.appendChild(word);
   }
 }
