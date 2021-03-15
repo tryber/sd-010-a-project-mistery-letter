@@ -3,21 +3,29 @@ const inputElement = document.getElementById('carta-texto');
 const pElement = document.getElementById('carta-gerada');
 
 function generateLetter() {
-    const inputEl = inputElement;
-    const pEl = pElement;
-    const letterWords = inputEl.value.split(' ');
+    const letterWords = inputElement.value.split(' ');
+    console.log(inputElement.value);
+    let spans = document.querySelectorAll('#carta-gerada span');
+    for (let indexS = 0; indexS < spans.length; indexS += 1) {
+        spans[indexS].remove();
+    }
 
-    if (inputEl.value !== '') {
-        for (let i = 0; i < letterWords.length; i += 1) {
-            const spanEl = document.createElement('span');
-            const word = letterWords[i];
-
-            if (word !== '') {
-                spanEl.innerText = letterWords[i];
-                pEl.appendChild(spanEl);
+    if (inputElement.value !== '') {
+        if (inputElement.value !== '') {
+            for (let i = 0; i < letterWords.length; i += 1) {
+                const spanElement = document.createElement('span');
+                const word = letterWords[i];
+    
+                if (word !== '') {
+                    spanElement.innerText = letterWords[i];
+                    pElement.appendChild(spanElement);
+                }
             }
         }
+    } else {
+        alert('Por favorm digite o conteúdo da carta.')
     }
+
 }
 
 buttonGenLetter.addEventListener('click', generateLetter);
