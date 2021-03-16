@@ -6,4 +6,54 @@
     justify-content: space-around;
 }
 
+.newspaper {
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.magazine1 {
+    background-color: teal;
+    color: white;
+    font-family: verdana;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.magazine2 {
+    background-image: url(images/pink-pattern.png);
+    color: fuchsia;
+    font-family: Verdana;
+    font-weight: 900;
+}
+
+.medium {
+    font-size: 20px;
+    padding: 8px;
+}
+
+.big {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.reallybig {
+    font-size: 40px;
+    padding: 15px;
+}
+
+.rotateleft {
+    transform: roate(-5deg);
+}
+
+.rotateright {
+    transform: rotate(5deg);
+}
+
+.skewright {
+    transform: skewX(-10deg);
+}
+
+
+
 /* -----------------------footer----------------------- */

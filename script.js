@@ -1,30 +1,64 @@
 const buttonGenLetter = document.getElementById('criar-carta');
-const inputElement = document.getElementById('carta-texto');
 const pElement = document.getElementById('carta-gerada');
 
-function generateLetter() {
-    const letterWords = inputElement.value.split(' ');
-    let spans = document.querySelectorAll('#carta-gerada span');
-    for (let indexS = 0; indexS < spans.length; indexS += 1) {
-        spans[indexS].remove();
+// ------ function clear all before generate letter ---
+function clearAll() {
+    while (pElement.firstChild) {
+        pElement.removeChild(pElement.firstChild);
     }
+}
 
-    if (inputElement.value !== '') {
-        if (inputElement.value !== '') {
-            for (let i = 0; i < letterWords.length; i += 1) {
-                const spanElement = document.createElement('span');
-                const word = letterWords[i];
-    
-                if (word !== '') {
-                    spanElement.innerText = letterWords[i];
-                    pElement.appendChild(spanElement);
-                }
-            }
-        }
-    } else {
+buttonGenLetter.addEventListener('click', clearAll);
+
+// ------- function generate letter ---------
+function generateLetter() {
+    const str = document.getElementById('carta-texto').value;
+    const arr = str.split(' ');
+    for (let index = 0; index < arr.length; index += 1) {
+        const tagSpan = document.createElement('span');
+        tagSpan.innerText = arr[index];
+        tagSpan.value = arr[index];
+        pElement.appendChild(tagSpan);
+    }
+    if (str === '' || str === ' ') {
         pElement.innerText = 'Por favor, digite o conteúdo da carta.';
     }
-
 }
 
 buttonGenLetter.addEventListener('click', generateLetter);
+
+// ------ function styleLetter ------
+const G1 = ['newspaper', 'magazine1', 'magazine2'];
+const G2 = ['medium', 'big', 'reallybig'];
+const G3 = ['rotateleft', 'rotateright'];
+const G4 = ['skewleft', 'skewright'];
+const classes = [G1, G2, G3, G4];
+let sortedClasses = [];
+
+function randomStyles() {
+    let numberOfStyles = Math.ceil((Math.random() * 2) + 2);
+    let counter = 1;
+    let ClassesInside = classes;
+    sortedClasses = [];
+    while (counter <= numberOfStyles) {
+        let sorted = Math.ceil(Math.random() * (ClassesInside.length -1));
+        sortedClasses.push(ClassesInside[sorted]);
+        ClassesInside.splice(sorted, 1);
+        counter += 1;
+    }
+    console.log(sortedClasses)
+}
+
+function styleLetter() {
+    const words = document.querySelectorAll('span');
+    for (let index = 0; index < words.length; index += 1) {
+        randomStyles();
+        for (let indexS = 0; indexS < sortedClasses.length; indexS += 1) {
+            let classL = sortedClasses[indexS];
+            let randomN = Math.ceil(Math.random() * (classL.length - 1));
+            words[index].classList.add(classL[randomN]);
+        }
+    }
+}
+
+buttonGenLetter.addEventListener('click', styleLetter);
