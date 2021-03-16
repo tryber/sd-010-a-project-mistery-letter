@@ -15,7 +15,7 @@
 .magazine1 {
     background-color: teal;
     color: white;
-    font-family: verdana;
+    font-family: Verdana;
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -43,7 +43,7 @@
 }
 
 .rotateleft {
-    transform: roate(-5deg);
+    transform: rotate(-5deg);
 }
 
 .rotateright {
@@ -52,6 +52,10 @@
 
 .skewright {
     transform: skewX(-10deg);
+}
+
+.skewleft {
+    transform: skewX(10deg);
 }
 
 
