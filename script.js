@@ -4,7 +4,6 @@ const pElement = document.getElementById('carta-gerada');
 
 function generateLetter() {
     const letterWords = inputElement.value.split(' ');
-    console.log(inputElement.value);
     let spans = document.querySelectorAll('#carta-gerada span');
     for (let indexS = 0; indexS < spans.length; indexS += 1) {
         spans[indexS].remove();
@@ -23,7 +22,7 @@ function generateLetter() {
             }
         }
     } else {
-        alert('Por favorm digite o conteúdo da carta.')
+        pElement.innerText = 'Por favor, digite o conteúdo da carta.';
     }
 
 }
