@@ -12,15 +12,15 @@ buttonGenLetter.addEventListener('click', clearAll);
 
 // ------- function generate letter ---------
 function generateLetter() {
-    const str = document.getElementById('carta-texto').value;
-    const arr = str.split(' ');
-    for (let index = 0; index < arr.length; index += 1) {
+    const textD = document.getElementById('carta-texto').value;
+    const span = textD.split(' ');
+    for (let index = 0; index < span.length; index += 1) {
         const tagSpan = document.createElement('span');
-        tagSpan.innerText = arr[index];
-        tagSpan.value = arr[index];
+        tagSpan.innerText = span[index];
+        tagSpan.value = span[index];
         pElement.appendChild(tagSpan);
     }
-    if (str === '' || str === ' ') {
+    if (textD === '' || textD === ' ') {
         pElement.innerText = 'Por favor, digite o conteúdo da carta.';
     }
 }
@@ -36,17 +36,17 @@ const classes = [G1, G2, G3, G4];
 let sortedClasses = [];
 
 function randomStyles() {
-    let numberOfStyles = Math.ceil((Math.random() * 2) + 2);
+    let numberOfStyles = (Math.ceil(Math.random() * 2)) + 2;
     let counter = 1;
     let ClassesInside = classes;
     sortedClasses = [];
     while (counter <= numberOfStyles) {
-        let sorted = Math.ceil(Math.random() * (ClassesInside.length -1));
+        let sorted = (Math.ceil(Math.random())) * (ClassesInside.length - 1);
         sortedClasses.push(ClassesInside[sorted]);
         ClassesInside.splice(sorted, 1);
         counter += 1;
     }
-    console.log(sortedClasses)
+    console.log(sortedClasses);
 }
 
 function styleLetter() {
@@ -55,7 +55,8 @@ function styleLetter() {
         randomStyles();
         for (let indexS = 0; indexS < sortedClasses.length; indexS += 1) {
             let classL = sortedClasses[indexS];
-            let randomN = Math.ceil(Math.random() * (classL.length - 1));
+            let large = classL.length;
+            let randomN = Math.ceil(Math.random() * (large - 1));
             words[index].classList.add(classL[randomN]);
         }
     }
