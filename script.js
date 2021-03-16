@@ -38,7 +38,7 @@ let sortedClasses = [];
 function randomStyles() {
     let numberOfStyles = (Math.ceil(Math.random() * 2)) + 2;
     let counter = 1;
-    let ClassesInside = classes;
+    let ClassesInside = [G1, G2, G3, G4];
     sortedClasses = [];
     while (counter <= numberOfStyles) {
         let sorted = (Math.ceil(Math.random())) * (ClassesInside.length - 1);
