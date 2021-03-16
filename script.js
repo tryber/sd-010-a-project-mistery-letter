@@ -32,16 +32,15 @@ const G1 = ['newspaper', 'magazine1', 'magazine2'];
 const G2 = ['medium', 'big', 'reallybig'];
 const G3 = ['rotateleft', 'rotateright'];
 const G4 = ['skewleft', 'skewright'];
-const classes = [G1, G2, G3, G4];
 let sortedClasses = [];
 
 function randomStyles() {
-    let numberOfStyles = (Math.ceil(Math.random() * 2)) + 2;
+    const numberOfStyles = (Math.ceil(Math.random() * 2)) + 2;
     let counter = 1;
-    let ClassesInside = [G1, G2, G3, G4];
+    const ClassesInside = [G1, G2, G3, G4];
     sortedClasses = [];
     while (counter <= numberOfStyles) {
-        let sorted = (Math.ceil(Math.random())) * (ClassesInside.length - 1);
+        const sorted = (Math.ceil(Math.random())) * (ClassesInside.length - 1);
         sortedClasses.push(ClassesInside[sorted]);
         ClassesInside.splice(sorted, 1);
         counter += 1;
@@ -54,9 +53,9 @@ function styleLetter() {
     for (let index = 0; index < words.length; index += 1) {
         randomStyles();
         for (let indexS = 0; indexS < sortedClasses.length; indexS += 1) {
-            let classL = sortedClasses[indexS];
-            let large = classL.length;
-            let randomN = Math.ceil(Math.random() * (large - 1));
+            const classL = sortedClasses[indexS];
+            const large = classL.length;
+            const randomN = Math.ceil(Math.random() * (large - 1));
             words[index].classList.add(classL[randomN]);
         }
     }
