@@ -45,7 +45,6 @@ function randomStyles() {
         ClassesInside.splice(sorted, 1);
         counter += 1;
     }
-    console.log(sortedClasses);
 }
 
 function styleLetter() {
@@ -62,3 +61,22 @@ function styleLetter() {
 }
 
 buttonGenLetter.addEventListener('click', styleLetter);
+
+
+// ------- function contador de letrinhas -----
+const cartaContador = document.querySelector('#carta-contador');
+
+function getSum(total) {
+    return total + 1;
+}
+
+function countWords() {
+    let contador = 0;
+    const span = document.querySelectorAll('span');
+    for (let index = 0; index < span.length; index += 1) {
+        contador += span[index].value.length;
+    }
+    cartaContador.innerHTML = contador;
+}
+
+buttonGenLetter.addEventListener('click', countWords);
