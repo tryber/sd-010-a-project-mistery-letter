@@ -98,7 +98,7 @@ span {
     transform: skewX(10deg);
 }
 
-#contador-container{
+#contador-container {
     align-self: center;
     text-align: center;
     margin: 20px;

@@ -62,13 +62,8 @@ function styleLetter() {
 
 buttonGenLetter.addEventListener('click', styleLetter);
 
-
 // ------- function contador de letrinhas -----
 const cartaContador = document.querySelector('#carta-contador');
-
-function getSum(total) {
-    return total + 1;
-}
 
 function countWords() {
     let contador = 0;
