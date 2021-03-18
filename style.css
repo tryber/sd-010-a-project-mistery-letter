@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.mysterious-letter {
+  margin-top: 30px;
+}
+
 .newspaper {
   background-color: antiquewhite;
   font-family: Times New Roman, Times, serif;
@@ -52,5 +56,5 @@
 }
 
 .skewright {
-  transform: skewY(-10deg);
+  transform: skewX(-10deg);
 }
