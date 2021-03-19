@@ -1,11 +1,13 @@
 function createLetter() {
   const letterInputElement = document.getElementById('carta-texto');
   const letterElement = document.getElementById('carta-gerada');
-
   const letterContent = letterInputElement.value;
-  const letterContentArray = letterContent.split(' ');
 
-  letterContent.value = '';
+  if (letterContent === '' || letterContent.trim() === '') {
+    letterElement.innerHTML = 'Por favor, digite o conteúdo da carta.';
+  }
+
+  const letterContentArray = letterContent.split(' ');
 
   for (let index = 0; index < letterContentArray.length; index += 1) {
     const spanElement = document.createElement('span');
