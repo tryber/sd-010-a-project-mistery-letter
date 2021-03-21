@@ -17,15 +17,23 @@ function ifThis() {
     return tagP;
   }
 }
+const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
+const sizeGroup = ['medium', 'big', 'reallybig'];
+const rotationGroup = ['rotateleft', 'rotateright', 'big'];
+const lastGroup = ['skewleft', 'skewright', 'magazine2'];
+// referência : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function rI() {
+  return Math.floor(Math.random() * (3 - 1 + 1));
+}
 
 button.addEventListener('click', () => {
   tagP.innerHTML = '';
   let words = inputLetter.value.split(' ');
   words = words.filter((x) => x !== '');
-  console.log(words);
   for (let index = 0; index < words.length; index += 1) {
     const spans = document.createElement('span');
     spans.innerHTML = words[index];
+    spans.classList.add(styleGroup[rI()], sizeGroup[rI()], rotationGroup[rI()], lastGroup[rI()]);
     tagP.appendChild(spans);
   }
   return ifThis();

@@ -5,6 +5,15 @@
 
 body {
   background-color: aliceblue;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+#carta-texto {
+  margin-bottom: 50px;
 }
 
 .newspaper {
