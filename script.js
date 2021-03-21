@@ -2,6 +2,8 @@ const selectButton = document.querySelector('#criar-carta');
 const selectInput = document.querySelector('#carta-texto');
 const selectP = document.querySelector('#carta-gerada');
 const selectContador = document.querySelector('#carta-contador');
+const selectTextoContador = document.querySelector('#textoContador');
+const selectBody = document.querySelector('body');
 const styles = ['newspaper', 'magazine1', 'magazine2'];
 const lengths = ['medium', 'big', 'reallybig'];
 const rotates = ['rotateleft', 'rotateright'];
@@ -41,6 +43,7 @@ function generateLetter() {
       const createSpan = document.createElement('span');
       selectContador.innerHTML = inputSplited.length;
       createSpan.innerHTML = inputSplited[index];
+      createSpan.id = 'lettertext';
       createSpan.style.display = 'inline-block';
       createSpan.classList.add(`${addStyle()}`);
       createSpan.classList.add(`${addleght()}`);
@@ -51,4 +54,5 @@ function generateLetter() {
   }
 }
 
+selectTextoContador.innerHTML = 'Quantidade de palavras desta carta: ';
 selectButton.addEventListener('click', generateLetter);
