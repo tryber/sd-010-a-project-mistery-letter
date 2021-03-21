@@ -30,6 +30,7 @@ button.addEventListener('click', () => {
   tagP.innerHTML = '';
   let words = inputLetter.value.split(' ');
   words = words.filter((x) => x !== '');
+  document.querySelector('#carta-contador').innerHTML = words.length;
   for (let index = 0; index < words.length; index += 1) {
     const spans = document.createElement('span');
     spans.innerHTML = words[index];
