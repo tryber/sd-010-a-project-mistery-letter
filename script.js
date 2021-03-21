@@ -3,7 +3,6 @@ const selectInput = document.querySelector('#carta-texto');
 const selectP = document.querySelector('#carta-gerada');
 const selectContador = document.querySelector('#carta-contador');
 const selectTextoContador = document.querySelector('#textoContador');
-const selectBody = document.querySelector('body');
 const styles = ['newspaper', 'magazine1', 'magazine2'];
 const lengths = ['medium', 'big', 'reallybig'];
 const rotates = ['rotateleft', 'rotateright'];
