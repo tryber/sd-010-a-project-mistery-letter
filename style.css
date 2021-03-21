@@ -20,3 +20,10 @@ body {
   font-weight: 900;
   text-transform: uppercase;
 }
+
+.magazine2 {
+  background-image: url(images/pink-pattern.png);
+  color: fuchsia;
+  font-family: Verdana;
+  font-weight: 900;
+}
