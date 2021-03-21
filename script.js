@@ -1,48 +1,33 @@
 const selectButton = document.querySelector('#criar-carta');
 const selectInput = document.querySelector('#carta-texto');
 const selectP = document.querySelector('#carta-gerada');
+const selectContador = document.querySelector('#carta-contador');
 const styles = ['newspaper', 'magazine1', 'magazine2'];
 const lengths = ['medium', 'big', 'reallybig'];
 const rotates = ['rotateleft', 'rotateright'];
 const Skews = ['skewleft', 'skewright'];
 
-function randomStyle() {
-  const randomStyles = Math.floor(Math.random() * styles.length);
-  return randomStyles;
-}
-
 function addStyle() {
-  const newStyle = styles[randomStyle()];
+  const randomStyles = Math.floor(Math.random() * styles.length);
+  const newStyle = styles[randomStyles];
   return newStyle;
 }
 
-function randomLenght() {
-  const randomLenghts = Math.floor(Math.random() * lengths.length);
-  return randomLenghts;
-}
-
 function addleght() {
-  const newLenght = lengths[randomLenght()];
+  const randomLenghts = Math.floor(Math.random() * lengths.length);
+  const newLenght = lengths[randomLenghts];
   return newLenght;
 }
 
-function ramdomRotate() {
-  const randomRotates = Math.floor(Math.random() * rotates.length);
-  return randomRotates;
-}
-
 function addRotate() {
-  const newRotate = rotates[ramdomRotate()];
+  const randomRotates = Math.floor(Math.random() * rotates.length);
+  const newRotate = rotates[randomRotates];
   return newRotate;
 }
 
-function randomSkew() {
-  const randomSkews = Math.floor(Math.random() * Skews.length);
-  return randomSkews;
-}
-
 function addSkew() {
-  const newSkew = Skews[randomSkew()];
+  const randomSkews = Math.floor(Math.random() * Skews.length);
+  const newSkew = Skews[randomSkews];
   return newSkew;
 }
 
@@ -54,6 +39,7 @@ function generateLetter() {
   } else {
     for (let index = 0; index < inputSplited.length; index += 1) {
       const createSpan = document.createElement('span');
+      selectContador.innerHTML = inputSplited.length;
       createSpan.innerHTML = inputSplited[index];
       createSpan.style.display = 'inline-block';
       createSpan.classList.add(`${addStyle()}`);
