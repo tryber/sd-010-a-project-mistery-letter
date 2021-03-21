@@ -1,9 +1,14 @@
 const tagP = document.getElementById('carta-gerada');
 const button = document.getElementById('criar-carta');
-const inputLetter = document.getElementById('carta-texto').value;
+const inputLetter = document.getElementById('carta-texto');
 
 button.addEventListener('click', () => {
-  const words = inputLetter.split(' ');
+  let words = inputLetter.value.split(' ');
+  words = words.filter(x => x !== '');
   console.log(words);
-  const spans = document.createElement('span');
+  for (let index = 0; index < words.length; index += 1) {
+    const spans = document.createElement('span');
+    spans.innerHTML = words[index];
+    tagP.appendChild(spans);
+  }
 });
