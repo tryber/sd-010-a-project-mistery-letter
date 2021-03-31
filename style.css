@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+span {
+  display: inline-block;
+}
+
+.newspaper {
+  background-color: antiquewhite;
+  font-family: Times New Roman, Times, serif;
+  font-weight: 700;
+}
+
+.magazine1 {
+  background-color: teal;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.magazine2 {
+  background-image: url('images/pink-pattern.png');
+  color: fuchsia;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+}
+
+.medium {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.big {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.reallybig {
+  font-size: 40px;
+  padding: 15px;
+}
+
+.rotateleft {
+  transform: rotate(-5deg);
+}
+
+.rotateright {
+  transform: rotate(5deg);
+}
+
+.skewleft {
+  transform: skewX(10deg);
+}
+
+.skewright {
+  transform: skewX(-10deg);
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  background-color: rgb(34, 78, 53);
+  padding: 20px;
+  text-decoration: underline;
+}
+
+input {
+  padding: 5px;
+  border: slategray double;
+  margin-right: 2px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 5px;
+  background-color: white;
+  border-radius: 7px;
+}
+
+input:hover {
+  border: solid black 2px;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+button:active {
+  text-decoration: underline;
+}
+
+#carta-contador {
+  margin-top: 10px;
+}
