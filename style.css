@@ -59,3 +59,45 @@ span {
 .skewright {
   transform: skewX(-10deg);
 }
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  background-color: rgb(34, 78, 53);
+  padding: 20px;
+  text-decoration: underline;
+}
+
+input {
+  padding: 5px;
+  border: slategray double;
+  margin-right: 2px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 5px;
+  background-color: white;
+  border-radius: 7px;
+}
+
+input:hover {
+  border: solid black 2px;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+button:active {
+  text-decoration: underline;
+}
+
+#carta-contador {
+  margin-top: 10px;
+}

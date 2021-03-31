@@ -16,20 +16,16 @@ const setClassToSpan = (element) => {
 
 const appendSpan = (text, boolean) => {
   const span = document.createElement('span');
-  let contador = 0;
   span.innerText = text;
-  if (boolean) {
-    setClassToSpan(span);
-    contador += 1;
-  }
-    letter.appendChild(span);
+  if (boolean) setClassToSpan(span);
+  letter.appendChild(span);
 };
 
 btnText.addEventListener('click', () => {
   const text = inputText.value;
   letter.innerText = '';
   let textArray = [];
-  if (text.length === 0) appendSpan('Por favor, digite o conteúdo da carta.', false);
+  if (text.length === 0) appendSpan('por favor, digite o conteúdo da carta.', false);
   else textArray = text.split(' ');
   textArray.forEach((element) => appendSpan(element, true));
   const spans = document.querySelectorAll('span');
