@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+span {
+  display: inline-block;
+}
+
 .newspaper {
   background-color: antiquewhite;
   font-family: Times New Roman, Times, serif;
@@ -19,7 +23,7 @@
 }
 
 .magazine2 {
-  background-image: 'images/pink-pattern.png';
+  background-image: url('images/pink-pattern.png');
   color: fuchsia;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
