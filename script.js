@@ -1,6 +1,6 @@
-const randomClass = () => {
-  
-};
+// const randomClass = () => {
+
+// };
 
 const removeExistingWords = () => {
   const elements = document.querySelectorAll('span');
