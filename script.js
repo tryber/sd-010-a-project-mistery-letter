@@ -9,7 +9,6 @@ const randomClass = () => {
   const randomNumberClass = Math.floor(Math.random() * classesGroup[randomNumberGroup].length);
   return classesGroup[randomNumberGroup][randomNumberClass];
 };
-console.log(randomClass());
 
 const removeExistingWords = () => {
   const elements = document.querySelectorAll('span');
@@ -46,6 +45,8 @@ const generateWords = () => {
       span.classList.add(randomClass());
       span.classList.add(randomClass());
       paragraphLetter.appendChild(span);
+      document.querySelector('#carta-contador')
+        .textContent = arrayWord.length;
     });
   }
 };

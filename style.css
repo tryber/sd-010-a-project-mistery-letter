@@ -12,6 +12,10 @@ p {
   margin-top: 50px;
 }
 
+span {
+  display: inline-block;
+}
+
 span + span {
   margin-left: 5px;
 }
