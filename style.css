@@ -7,3 +7,7 @@
 ul li {
  list-style: none; 
 }
+
+span + span {
+  margin-left: 5px;
+}
