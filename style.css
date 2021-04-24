@@ -11,3 +11,9 @@ ul li {
 span + span {
   margin-left: 5px;
 }
+
+.newspaper {
+  background-color: antiquewhite;
+  font-family: Times New Roman, Times, serif;
+  font-weight: 700;
+}
