@@ -1,6 +1,15 @@
-// const randomClass = () => {
+const randomClass = () => {
+  const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
+  const sizeGroup = ['medium', 'big', 'reallybig'];
+  const rotationGroup = ['rotateleft', 'rotateright'];
+  const slopeGroup = ['skewleft', 'skewright'];
 
-// };
+  const classesGroup = [styleGroup, sizeGroup, rotationGroup, slopeGroup];
+  const randomNumberGroup = Math.floor(Math.random() * classesGroup.length);
+  const randomNumberClass = Math.floor(Math.random() * classesGroup[randomNumberGroup].length);
+  return classesGroup[randomNumberGroup][randomNumberClass];
+};
+console.log(randomClass());
 
 const removeExistingWords = () => {
   const elements = document.querySelectorAll('span');
@@ -13,8 +22,12 @@ const removeExistingWords = () => {
 
 const generateError = (input, paragraph) => {
   const paragraphLetter = paragraph;
-  if (input.value.trim() === '') {
-    paragraphLetter.textContent = 'Por favor, digite o conteúdo da carta.';
+  const inputParagraph = input;
+  const textError = 'Por favor, digite o conteúdo da carta.';
+  if (inputParagraph.value.trim() === '') {
+    paragraphLetter.textContent = textError;
+  } else if (input.value.trim() !== '' && paragraphLetter.textContent === textError) {
+    paragraphLetter.textContent = '';
   }
 };
 
@@ -25,12 +38,16 @@ const generateWords = () => {
   generateError(input, paragraphLetter);
   removeExistingWords();
 
-  const arrayWord = input.value.split(' ');
-  arrayWord.forEach((word) => {
-    const span = document.createElement('span');
-    span.textContent = word;
-    paragraphLetter.appendChild(span);
-  });
+  if (paragraphLetter.textContent !== 'Por favor, digite o conteúdo da carta.') {
+    const arrayWord = input.value.split(' ');
+    arrayWord.forEach((word) => {
+      const span = document.createElement('span');
+      span.textContent = word;
+      span.classList.add(randomClass());
+      span.classList.add(randomClass());
+      paragraphLetter.appendChild(span);
+    });
+  }
 };
 
 const generateLetter = () => {

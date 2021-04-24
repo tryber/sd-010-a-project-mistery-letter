@@ -8,6 +8,10 @@ ul li {
   list-style: none;
 }
 
+p {
+  margin-top: 50px;
+}
+
 span + span {
   margin-left: 5px;
 }
@@ -62,4 +66,17 @@ span + span {
 
 .skewright {
   transform: skew(-10deg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20vh auto;
+  text-align: center;
+  padding: 40px;
+}
+
+#criar-carta {
+  margin-top: 20px;
+  padding: 8px;
+  cursor: pointer;
 }
