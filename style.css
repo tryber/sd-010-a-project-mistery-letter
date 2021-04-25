@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+.header {
+  margin: 40px auto -100px;
+  padding: 8px;
+}
+
+.header__title {
+  text-align: center;
+}
+
 ul li {
   list-style: none;
 }
@@ -14,6 +23,7 @@ p {
 
 span {
   display: inline-block;
+  cursor: pointer;
 }
 
 span + span {
@@ -73,10 +83,21 @@ span + span {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 500px;
   margin: 20vh auto;
   text-align: center;
   padding: 40px;
+}
+
+.container label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.container input {
+  width: 100%;
+  padding: 8px;
 }
 
 #criar-carta {

@@ -11,7 +11,7 @@ const randomClass = () => {
 };
 
 const removeExistingWords = () => {
-  const elements = document.querySelectorAll('span');
+  const elements = document.querySelectorAll('.wordsLetter');
   if (elements.length > 0) {
     elements.forEach((element) => {
       element.remove();
@@ -30,18 +30,27 @@ const generateError = (input, paragraph) => {
   }
 };
 
+const changeRandomClassWord = (event) => {
+  const { target } = event;
+  if (!target.getAttribute('class').includes('carta-gerada')) {
+    target.classList = '';
+    target.classList.add(randomClass());
+    target.classList.add(randomClass());
+  }
+};
+
 const generateWords = () => {
   const input = document.querySelector('#carta-texto');
   const paragraphLetter = document.querySelector('#carta-gerada');
-
   generateError(input, paragraphLetter);
   removeExistingWords();
-
   if (paragraphLetter.textContent !== 'Por favor, digite o conteúdo da carta.') {
     const arrayWord = input.value.split(' ');
     arrayWord.forEach((word) => {
       const span = document.createElement('span');
       span.textContent = word;
+      span.addEventListener('click', changeRandomClassWord);
+      span.classList.add('wordsLetter');
       span.classList.add(randomClass());
       span.classList.add(randomClass());
       paragraphLetter.appendChild(span);
