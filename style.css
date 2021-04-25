@@ -83,7 +83,6 @@ span + span {
 }
 
 .container {
-  max-width: 500px;
   margin: 20vh auto;
   text-align: center;
   padding: 40px;
@@ -96,6 +95,7 @@ span + span {
 }
 
 .container input {
+  max-width: 500px;
   width: 100%;
   padding: 8px;
 }
