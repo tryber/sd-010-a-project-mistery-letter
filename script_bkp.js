@@ -1,17 +1,19 @@
 const textInput = document.getElementById('carta-texto');
 const generatedLetter = document.querySelector('#carta-gerada');
 const wordCount = document.querySelector('#carta-contador');
-const groupStyle = ['newspaper', 'magazine1', 'magazine2'];
-const groupSize = ['medium', 'big', 'reallybig'];
-const groupRotate = ['rotateleft', 'rotateright'];
-const groupSkew = ['skewleft', 'skewright'];
-
-function generateRandomClass(event, className) {
-  const randomClass = className[Math.floor(Math.random() * className.length)];
-  event.classList.add(randomClass);
+const classesArr = [
+  ['newspaper', 'magazine1', 'magazine2'],
+  ['medium', 'big', 'reallybig'],
+  ['rotateleft', 'rotateright'],
+  ['skewleft', 'skewright'],
+];
+function generateRandomClass(event) {
+  classesArr.forEach((classe) => {
+    const randomClass = classe[Math.floor(Math.random() * classe.length)];
+    event.classList.add(randomClass);
+  });
 }
 
-// eslint-disable-next-line max-lines-per-function
 function generateLetter() {
   const letterArr = textInput.value.split(' ');
   generatedLetter.innerText = '';
@@ -24,10 +26,7 @@ function generateLetter() {
       const createSpan = document.createElement('span');
       createSpan.innerText = word;
       generatedLetter.appendChild(createSpan);
-      generateRandomClass(createSpan, groupStyle);
-      generateRandomClass(createSpan, groupSize);
-      generateRandomClass(createSpan, groupRotate);
-      generateRandomClass(createSpan, groupSkew);
+      generateRandomClass(createSpan);
     });
     wordCount.innerText = generatedLetter.children.length;
   }
