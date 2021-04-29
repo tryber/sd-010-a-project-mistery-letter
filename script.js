@@ -2,8 +2,8 @@ const generate = document.getElementById('criar-carta');
 const text = document.querySelector('#carta-texto');
 const result = document.querySelector('#carta-gerada');
 const counterP = document.querySelector('#carta-contador');
-const classArray = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig',
-  'rotateleft', 'rotateright', 'skewleft', 'skewright'];
+// const classArray = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig',
+// 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
 
 const inputArr = text.value.split(' ');
 function countWords() {
