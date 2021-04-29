@@ -1,18 +1,35 @@
 const generate = document.getElementById('criar-carta');
-const text = document.querySelector('#carta-texto');
+const text = document.getElementById('carta-texto');
 const result = document.querySelector('#carta-gerada');
-const counter = document.querySelector('#carta-contador');
+const counterP = document.querySelector('#carta-contador');
+const classArray = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig',
+  'rotateleft', 'rotateright', 'skewleft', 'skewright'];
+
+const inputArr = text.value.split(' ');
+let wordAmount = inputArr.length;
+
+function countWords() {
+  counterP.innerText = wordAmount;
+}
+
+countWords();
+
+const letter = () => {
+  let resultTxt = '';
+  if (inputArr !== '') {
+    inputArr.forEach((word) => {
+      resultTxt += `<span>${word}</span>`;
+    });
+  }
+  if (resultTxt === '') {
+    resultTxt = 'Por favor, digite o conteúdo da carta.';
+    wordAmount = 0;
+  }
+  result.innerHTML = resultTxt;
+  return result.innerHTML;
+};
 
 generate.addEventListener('click', (event) => {
   event.preventDefault();
-  if (!text.value || text.value === '' || text.value === undefined) {
-    result.innerHTML = 'Por favor, digite o conteúdo da carta.';
-  }
-  const toArray = text.value.split(' ')
-    .map((word) => (`<span>${word}</span>`));
-  if (toArray.lenght < 1) {
-    result.innerHTML = 'Por favor, digite o conteúdo da carta.';
-  }
-  result.innerHTML = `${toArray}`;
-  counter.innerHTML = `${toArray.lenght}`;
+  letter();
 });
