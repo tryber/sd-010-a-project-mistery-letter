@@ -19,23 +19,21 @@ const firstStep = () => {
   if (inputArr !== '') {
     inputArr.map((word) => {
       resultTxt += `<span>${word}</span>`;
-      return resultTxt;
+      result.innerHTML = resultTxt;
+      return true;
     });
   }
   if (resultTxt === '') {
-    resultTxt = 'Por favor, digite o conteúdo da carta.';
+    result.innerHTML = 'Por favor, digite o conteúdo da carta.';
   }
-  return console.log(resultTxt);
 };
 
-const letter = () => {
+generate.addEventListener('input', (event) => {
+  event.preventDefault();
   countWords();
-  firstStep();
-  letter();
-  generate.addEventListener('click', (event) => {
-    event.preventDefault();
-    result.innerHTML = resultTxt;
-  });
-};
+});
 
-letter();
+generate.addEventListener('click', (event) => {
+  event.preventDefault();
+  firstStep();
+});
