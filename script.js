@@ -1,35 +1,41 @@
 const generate = document.getElementById('criar-carta');
-const text = document.getElementById('carta-texto');
+const text = document.querySelector('#carta-texto');
 const result = document.querySelector('#carta-gerada');
 const counterP = document.querySelector('#carta-contador');
 const classArray = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig',
   'rotateleft', 'rotateright', 'skewleft', 'skewright'];
 
 const inputArr = text.value.split(' ');
-let wordAmount = inputArr.length;
-
 function countWords() {
-  counterP.innerText = wordAmount;
+  const wordAmount = inputArr.length;
+  counterP.innerText = wordAmount - 1;
 }
 
 countWords();
 
-const letter = () => {
-  let resultTxt = '';
+let resultTxt = '';
+
+const firstStep = () => {
   if (inputArr !== '') {
-    inputArr.forEach((word) => {
+    inputArr.map((word) => {
       resultTxt += `<span>${word}</span>`;
+      return resultTxt;
     });
   }
   if (resultTxt === '') {
     resultTxt = 'Por favor, digite o conteúdo da carta.';
-    wordAmount = 0;
   }
-  result.innerHTML = resultTxt;
-  return result.innerHTML;
+  return console.log(resultTxt);
 };
 
-generate.addEventListener('click', (event) => {
-  event.preventDefault();
+const letter = () => {
+  countWords();
+  firstStep();
   letter();
-});
+  generate.addEventListener('click', (event) => {
+    event.preventDefault();
+    result.innerHTML = resultTxt;
+  });
+};
+
+letter();
