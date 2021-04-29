@@ -1,6 +1,7 @@
 const generate = document.getElementById('criar-carta');
 const text = document.querySelector('#carta-texto');
 const result = document.querySelector('#carta-gerada');
+const counter = document.querySelector('#carta-contador');
 
 generate.addEventListener('click', (event) => {
   event.preventDefault();
@@ -13,4 +14,5 @@ generate.addEventListener('click', (event) => {
     result.innerHTML = 'Por favor, digite o conteúdo da carta.';
   }
   result.innerHTML = `${toArray}`;
+  counter.innerHTML = `${toArray.lenght}`;
 });
